@@ -92,7 +92,7 @@ class ScoreService {
                     if($shot != 'score' && strlen($itemValue) && $calculate) {
                         $currentScore += $this->score($gameConfig, $frame, $shot);
                         //if score a strike, get next two shots to add to current score
-                        if($itemValue == 10 && $frame != 10) {
+                        if($itemValue == 10 && $frame != 10 && ($itemValue == 10 && $shot != '2')) {
                             if($this->score($gameConfig, ((int)$frame + 1), '1') != 10 &&
                                 strlen($gameConfig['game'][(string)((int)$frame + 1)]['1']) &&
                                 strlen($gameConfig['game'][(string)((int)$frame + 1)]['2'])) {
@@ -156,7 +156,7 @@ class ScoreService {
      */
     public static function analyze($score, $gameConfig, $frame, $shot) {
         if(strlen($score)) {
-            if($score == '10')
+            if($score == '10' && ($shot != '2' || $frame == 10))
                 return 'X';
             if($shot == '2' && (int)($score + $gameConfig['game'][$frame]['1']) >= 10) {
                 return '/';
