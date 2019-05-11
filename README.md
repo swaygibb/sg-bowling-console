@@ -5,3 +5,4 @@
 
 ![Alt text](img/screenshots/img02.jpg?raw=true "Setup Game")
 ![Alt text](img/screenshots/img01.jpg?raw=true "Screenshot 1")
+![Alt text](img/screenshots/img03.jpg?raw=true "Screenshot 2")
