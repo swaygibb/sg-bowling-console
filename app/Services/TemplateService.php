@@ -5,6 +5,10 @@ use App\Services\ScoreService;
 
 class TemplateService {
 
+    /**
+     * scoringForm - setup available pin selection
+     * @return string
+     */
     public function scoringForm() {
         return '
             <div class="mx-auto w-1/6 border text-white mt-8 shadow-md rounded pb-4 bg-blue-darkest">
@@ -87,9 +91,13 @@ class TemplateService {
         ';
     }
 
+    /**
+     * bowling - get bowling game
+     * @param $bowlingConfig - game from session
+     * @return string
+     */
     public function bowling($bowlingConfig) {
         $gameConfig = json_decode($bowlingConfig, true);
-
         return '
             <div class="flex mt-2 font-bold">
                 <div class="flex-1"></div>
@@ -120,6 +128,10 @@ class TemplateService {
         ';
     }
 
+    /**
+     * userConfig - get user config form
+     * @return string
+     */
     public function userConfig() {
         return '
             <h3 class="w-full max-w-xs mx-auto text-center mb-4 mt-4 text-grey-darkest">Setup User</h3>

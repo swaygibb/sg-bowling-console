@@ -6,6 +6,12 @@ use App\Services\SessionService;
 use App\Services\ScoreService;
 
 class FormService {
+
+    /**
+     * handleSubmit - handle submits in the system
+     * @param string $config - config name for session
+     * @return mixed
+     */
     public function handleSubmit($config) {
         if(isset($_POST['form_type']) && $_POST['form_type'] == 'user_config') {
             return (new UserService)->new($_POST['name'], $config);

@@ -4,6 +4,13 @@ namespace App\Services;
 use App\Utilities\Sluggy;
 
 class UserService {
+
+    /**
+     * new - setup new user config
+     * @param string $name
+     * @param string $config
+     * @return string
+     */
     public function new($name, $config) {
         $userObject['game'] = [
             "name" => $name,
