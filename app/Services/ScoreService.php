@@ -116,7 +116,7 @@ class ScoreService {
                                 $frame == '9') {
 
                                 $currentScore += (int)$gameConfig['game'][(string)((int)$frame + 1)]['1'];
-                                $currentScore += (int)$gameConfig['game'][(string)((int)$frame + 1)]['1'];
+                                $currentScore += (int)$gameConfig['game'][(string)((int)$frame + 1)]['2'];
                                 $calculate = true;
                             }
                         } else {
