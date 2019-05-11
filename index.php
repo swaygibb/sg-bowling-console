@@ -3,6 +3,7 @@
     require __DIR__ . '/vendor/autoload.php';
 
     use App\Services\LoadService;
+    use App\Services\SessionService;
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -31,16 +32,23 @@
         <![endif]-->
 
         <div class="w-5/6 mx-auto my-6 border border-grey-darkest rounded p-6 bg-blue-light">
-            <h1>SG Bowling Console</h1>
+            <h1><img src="/img/logo.png" alt="SG Bowling Console" /> SG Bowling Console</h1>
             <div class="">
                 <?php
                     echo (new LoadService)->execute();
                 ?>
             </div>
+            <?php
+            $bowlingConfig = (new SessionService)->get('bowlingConfig');
+            if($bowlingConfig) {
+            ?>
             <form action="/" method="POST">
                 <input type="hidden" name="form_type" value="reset_game" />
                 <input class="mt-6 shadow bg-green hover:bg-green-light focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" value="Reset Game" />
             </form>
+            <?php
+            }
+            ?>
         </div>
 
         <script src="js/vendor/modernizr-3.7.1.min.js"></script>

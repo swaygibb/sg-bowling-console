@@ -14,7 +14,7 @@ class LoadService {
         $bowlingConfig = (new SessionService)->get('bowlingConfig');
         //If they are display template
         if($bowlingConfig) {
-            return (new TemplateService)->bowling($bowlingConfig);
+            return (new TemplateService)->bowling($bowlingConfig) . (new TemplateService)->scoringForm();
         }
         //If they are not, then ask for user name
         if(!$bowlingConfig) {
