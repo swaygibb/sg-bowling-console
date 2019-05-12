@@ -179,6 +179,7 @@ class ScoreService {
      * @return string class of whether user interface item should be removed
      */
     public function checkPins($pins) {
-        return ((int)(new SessionService)->get('pinsLeft') < (int)$pins) ? 'invisible' : 'visible';
+        if((new SessionService)->get('pinsLeft'))
+            return ((int)(new SessionService)->get('pinsLeft') < (int)$pins) ? 'invisible' : 'visible';
     }
 }
